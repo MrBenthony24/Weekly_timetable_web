@@ -1,0 +1,6 @@
+{
+  "name": "Timetable Duo Tối Giản",
+  "description": "Thời khóa biểu đôi tối giản với giao diện trắng thanh lịch, các tông màu Pastel trang nhã, công cụ tìm kiếm lọc giờ học thông minh và chức năng xuất ảnh thời khóa biểu siêu tốc.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
