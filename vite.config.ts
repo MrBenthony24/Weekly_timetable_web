@@ -6,7 +6,6 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
-    base: '/Weekly_timetable_web/',
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

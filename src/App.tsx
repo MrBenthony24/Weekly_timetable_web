@@ -945,7 +945,10 @@ export default function App() {
 
       {/* Search and Global Layout Control Box */}
       <section className="max-w-5xl mx-auto px-4 mb-6">
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 md:p-5 shadow-xs flex flex-col md:flex-row gap-4 justify-between items-center transition-colors duration-300">
+        <div 
+          className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-l-4 rounded-r-2xl rounded-l-none p-4 md:p-5 shadow-xs flex flex-col md:flex-row gap-4 justify-between items-center transition-colors duration-300"
+          style={{ borderLeftColor: '#F9B2D7' }}
+        >
           
           {/* Left: View selector tabs */}
           <div className="flex bg-slate-100 dark:bg-slate-950 p-1 rounded-xl border border-slate-200/60 dark:border-slate-800 w-full md:w-auto" id="view-mode-tabs">
@@ -1058,7 +1061,10 @@ export default function App() {
 
       {/* Guide Note */}
       <section className="max-w-5xl mx-auto px-4 mb-5">
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-l-4 border-l-slate-400 dark:border-l-slate-600 p-3 rounded-r-xl flex items-start gap-3 shadow-xs transition-colors duration-300">
+        <div 
+          className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-l-4 p-3 rounded-r-xl flex items-start gap-3 shadow-xs transition-colors duration-300"
+          style={{ borderLeftColor: '#F9B2D7' }}
+        >
           <Info className="w-5 h-5 text-slate-500 dark:text-slate-400 shrink-0 mt-0.5" />
           <div className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
             <span className="font-bold text-slate-800 dark:text-slate-200">Mẹo tương tác:</span> Click trực tiếp vào bất kỳ <span className="font-bold underline">ô thời gian</span> hoặc <span className="font-semibold underline">thanh nghỉ trưa</span> nào để thêm công việc mới, chỉnh sửa nội dung, hoặc tô điểm thêm các tông màu trang nhã tự chọn! Lịch trình được tự động lưu lại trên máy của bạn.
@@ -1076,7 +1082,8 @@ export default function App() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 md:p-6 shadow-xs relative overflow-hidden transition-colors duration-300"
+                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 border-l-4 rounded-r-2xl rounded-l-none p-4 md:p-6 shadow-xs relative overflow-hidden transition-colors duration-300"
+                style={{ borderLeftColor: '#F9B2D7' }}
                 id="timetable-section-1"
               >
                 {/* Background watermarks disabled */}
@@ -1355,7 +1362,8 @@ export default function App() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-white border border-slate-200 rounded-2xl p-4 md:p-6 shadow-xs relative overflow-hidden"
+                className="bg-white border border-slate-200 border-l-4 rounded-r-2xl rounded-l-none p-4 md:p-6 shadow-xs relative overflow-hidden"
+                style={{ borderLeftColor: '#F9B2D7' }}
                 id="timetable-section-2"
               >
                 {/* Background watermarks disabled */}
