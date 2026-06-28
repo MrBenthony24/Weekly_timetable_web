@@ -21,6 +21,13 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import html2canvas from 'html2canvas';
 
+import { createClient } from '@supabase/supabase-js';
+
+// 1. Khởi tạo Supabase ở bên ngoài Component
+const supabaseUrl = 'https://zvbbubadkkikouswkwxw.supabase.co';
+const supabaseKey = 'sb_publishable_9yKVcgAp6ujSa-I7vIvotg_c14X7Ndp';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 import { 
   DAYS_OF_WEEK, 
   TIME_SLOTS, 
@@ -148,6 +155,31 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const printAreaRef = useRef<HTMLDivElement>(null);
+
+  // Supabase Realtime Sync State
+  const [lichTrinh, setLichTrinh] = useState<any[]>([]);
+
+  useEffect(() => {
+    // 2. Mở kênh lắng nghe bên trong useEffect
+    const channel = supabase
+      .channel('dong-bo-lich-trinh')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'Weekly_timetable_web' },
+        (payload) => {
+          console.log('Có thay đổi từ người kia:', payload);
+          
+          // 3. Xử lý cập nhật giao diện ở đây
+          // Ví dụ: setLichTrinh(dữ_liệu_mới)
+        }
+      )
+      .subscribe();
+
+    // 4. Dọn dẹp kênh khi tắt trang để tránh lỗi tràn bộ nhớ
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []); // Mảng rỗng [] giúp đoạn code này chỉ chạy 1 lần khi mở trang
 
   // Sync to localStorage
   useEffect(() => {
